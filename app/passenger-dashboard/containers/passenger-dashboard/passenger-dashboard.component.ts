@@ -9,30 +9,11 @@ import { Passenger } from '../../models/passenger.interface';
         <div>
             <passenger-count
                 [items]="passengers">
-
             </passenger-count>
-            <passenger-detail>
-
+            <passenger-detail
+                *ngFor="let passenger of passengers;"
+                [detail]="passenger">
             </passenger-detail>
-            <ul>
-                <li *ngFor="let passenger of passengers; let i = index">
-                <span
-                    class="status"
-                    [class.checked-in]="passenger.checkedIn"></span>
-                <span
-                    class="status"
-                    [style.backgroundColor]="(passenger.checkedIn ? 'green' : 'red')"></span>
-                {{ i }}: {{ passenger.fullname }}
-                <p>{{ passenger | json }}</p>
-                <div class="date">
-                    Check in date:
-                    {{ passenger.checkedIn ? (passenger.checkInDate | date: 'yMMMd' | uppercase ) : 'Not checked in' }}
-                </div>
-                <div class="children">
-                    Children: {{ passenger.children?.length || 0 }}
-                </div>
-                </li>
-            </ul>
         </div>
     `
 })
