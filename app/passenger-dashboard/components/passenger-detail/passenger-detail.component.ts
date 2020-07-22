@@ -54,7 +54,6 @@ export class PassengerDetailComponent implements OnChanges {
     constructor() {}
 
     ngOnChanges(changes) {
-        console.log(changes);
         if (changes.detail) {
             this.detail = Object.assign({}, changes.detail.currentValue);
         }
