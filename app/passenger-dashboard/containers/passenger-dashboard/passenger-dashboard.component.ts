@@ -12,13 +12,13 @@ import { Passenger } from '../../models/passenger.interface';
             <passenger-count
                 [items]="passengers">
             </passenger-count>
-            <passenger-detail
+            <passenger-summary
                 *ngFor="let passenger of passengers;"
                 [detail]="passenger"
                 (view)="handleView($event)"
                 (edit)="handleEdit($event)"
                 (remove)="handleRemove($event)">
-            </passenger-detail>
+            </passenger-summary>
         </div>
     `
 })

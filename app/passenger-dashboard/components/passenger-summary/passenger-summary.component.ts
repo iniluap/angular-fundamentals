@@ -3,7 +3,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Passenger } from '../../models/passenger.interface';
 
 @Component({
-    selector: 'passenger-detail',
+    selector: 'passenger-summary',
+    styleUrls: ['passenger-summary.component.scss'],
     template: `
         <div>
             <h4>
@@ -13,10 +14,9 @@ import { Passenger } from '../../models/passenger.interface';
                 </span>
                 {{ detail.fullname }}
             </h4>
-            <div class="date">
-                Check in date:
-                {{ detail.checkedIn ? (detail.checkInDate | date: 'yMMMd' | uppercase ) : 'Not checked in' }}
-            </div>
+            <button (click)="goToPassenger()">
+                View
+            </button>
             <button (click)="goToEdit()">
                 Edit
             </button>
@@ -26,7 +26,7 @@ import { Passenger } from '../../models/passenger.interface';
         </div>
     `
 })
-export class PassengerDetailComponent {
+export class PassengerSummaryComponent{
     @Input()
     detail: Passenger;
 
@@ -43,5 +43,13 @@ export class PassengerDetailComponent {
 
     onRemove() {
         this.remove.emit(this.detail);
+    }
+
+    goToEdit() {
+        this.view.emit(this.detail);
+    }
+
+    goToPassenger() {
+        this.view.emit(this.detail);
     }
 }

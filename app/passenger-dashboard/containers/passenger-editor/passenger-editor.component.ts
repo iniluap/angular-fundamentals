@@ -7,8 +7,8 @@ import { PassengerDashboardService } from '../../models/passenger-dashboard.serv
 import { Passenger } from '../../models/passenger.interface';
 
 @Component({
-    selector: 'passenger-viewer',
-    styleUrls: ['passenger-viewer.component.scss'],
+    selector: 'passenger-editor',
+    styleUrls: ['passenger-editor.component.scss'],
     template: `
         <div>
             <button (click)="goBack()">&lsaquo; Go back</button>
@@ -19,7 +19,7 @@ import { Passenger } from '../../models/passenger.interface';
         </div>
     `
 })
-export class PassengerViewerComponent implements OnInit {
+export class PassengerEditorComponent implements OnInit {
     passenger: Passenger;
     constructor(
         private router: Router,
