@@ -1,6 +1,7 @@
 .summary-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    align-items: self-end;
     gap: 40px;
     padding: 20px 0;
     border-bottom: 1px solid #ddd;
@@ -25,6 +26,16 @@ h4 {
 
     &.checked-in {
         background: #2ecc71;
+    }
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @media (min-width: 800px) {
+        flex-direction: row;
     }
 }
 

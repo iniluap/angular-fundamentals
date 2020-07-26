@@ -15,15 +15,17 @@ import { Passenger } from '../../models/passenger.interface';
                     </span>
                     {{ detail.fullname }}
                 </h4>
-                <button (click)="toggleView()">
-                    {{ viewing ? 'Hide' : 'View' }}
-                </button>
-                <button (click)="goToEdit()">
-                    Edit
-                </button>
-                <button (click)="onRemove()">
-                    Remove
-                </button>
+                <div class="button-wrapper">
+                    <button (click)="toggleView()">
+                        {{ viewing ? 'Hide' : 'View' }}
+                    </button>
+                    <button (click)="goToEdit()">
+                        Edit
+                    </button>
+                    <button (click)="onRemove()">
+                        Remove
+                    </button>
+                </div>
             </div>
             <passenger-detail
                 *ngIf="this.viewing"
