@@ -1,7 +1,7 @@
 ### Note
 
 This project was built when taking Todd Motto's "Angular Fundamentals" course.
-Comparing to the course tasks, I added a component displaying passangers data and altered styling a bit.
+Comparing to the course tasks, I added a component displaying passengers data and altered styling a bit.
 
 
 <a href="https://ultimatecourses.com" target="_blank"><img src="https://ultimatecourses.com/static/banners/ultimate-angular-leader-old.svg"></a>
