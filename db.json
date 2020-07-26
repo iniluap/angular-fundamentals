@@ -4,7 +4,7 @@
       "fullname": "Steve",
       "id": 1,
       "checkedIn": true,
-      "baggage": "none",
+      "baggage": "hold-only",
       "checkInDate": 1490742000000
     },
     {
@@ -15,11 +15,11 @@
       "baggage": ""
     },
     {
-      "id": 4,
       "fullname": "Louise",
+      "id": 4,
       "checkedIn": true,
-      "checkInDate": 1488412800000,
-      "baggage": ""
+      "baggage": "hand-hold",
+      "checkInDate": 1488412800000
     },
     {
       "id": 5,

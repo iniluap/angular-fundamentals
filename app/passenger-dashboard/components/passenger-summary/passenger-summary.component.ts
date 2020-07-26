@@ -6,27 +6,35 @@ import { Passenger } from '../../models/passenger.interface';
     selector: 'passenger-summary',
     styleUrls: ['passenger-summary.component.scss'],
     template: `
-        <div>
-            <h4>
-                <span
-                    class="status"
-                    [style.backgroundColor]="(detail.checkedIn ? 'green' : 'red')">
-                </span>
-                {{ detail.fullname }}
-            </h4>
-            <button (click)="goToPassenger()">
-                View
-            </button>
-            <button (click)="goToEdit()">
-                Edit
-            </button>
-            <button (click)="onRemove()">
-                Remove
-            </button>
+        <div class="summary-wrapper">
+            <div class="summary-item">
+                <h4>
+                    <span
+                        class="status"
+                        [style.backgroundColor]="(detail.checkedIn ? 'green' : 'red')">
+                    </span>
+                    {{ detail.fullname }}
+                </h4>
+                <button (click)="toggleView()">
+                    {{ viewing ? 'Hide' : 'View' }}
+                </button>
+                <button (click)="goToEdit()">
+                    Edit
+                </button>
+                <button (click)="onRemove()">
+                    Remove
+                </button>
+            </div>
+            <passenger-detail
+                *ngIf="this.viewing"
+                [detail]="detail">
+            </passenger-detail>
         </div>
     `
 })
 export class PassengerSummaryComponent{
+    viewing: boolean = false;
+
     @Input()
     detail: Passenger;
 
@@ -40,6 +48,9 @@ export class PassengerSummaryComponent{
     view: EventEmitter<Passenger> = new EventEmitter<Passenger>();
 
     constructor() {}
+    toggleView() {
+        this.viewing = !this.viewing;
+    }
 
     onRemove() {
         this.remove.emit(this.detail);
@@ -49,7 +60,4 @@ export class PassengerSummaryComponent{
         this.view.emit(this.detail);
     }
 
-    goToPassenger() {
-        this.view.emit(this.detail);
-    }
 }

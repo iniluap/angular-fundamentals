@@ -1,47 +1,28 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Passenger } from '../../models/passenger.interface';
 
 @Component({
     selector: 'passenger-detail',
+    styleUrls: ['passenger-detail.component.scss'],
     template: `
-        <div>
-            <h4>
-                <span
-                    class="status"
-                    [style.backgroundColor]="(detail.checkedIn ? 'green' : 'red')">
-                </span>
-                {{ detail.fullname }}
-            </h4>
-            <div class="date">
+        <div class="detail-wrapper">
+            <p class="date">
+                Passenger ID:
+                {{ detail.id ? (detail.id ) : 'Unknown' }}
+            </p>
+            <p class="date">
                 Check in date:
                 {{ detail.checkedIn ? (detail.checkInDate | date: 'yMMMd' | uppercase ) : 'Not checked in' }}
-            </div>
-            <button (click)="goToEdit()">
-                Edit
-            </button>
-            <button (click)="onRemove()">
-                Remove
-            </button>
+            </p>
+            <p class="date">
+                Baggage:
+                {{ detail.baggage ? (detail.baggage ) : 'No baggage declared' }}
+            </p>
         </div>
     `
 })
 export class PassengerDetailComponent {
     @Input()
     detail: Passenger;
-
-    @Output()
-    edit: EventEmitter<Passenger> = new EventEmitter<Passenger>();
-
-    @Output()
-    remove: EventEmitter<Passenger> = new EventEmitter<Passenger>();
-
-    @Output()
-    view: EventEmitter<Passenger> = new EventEmitter<Passenger>();
-
-    constructor() {}
-
-    onRemove() {
-        this.remove.emit(this.detail);
-    }
 }

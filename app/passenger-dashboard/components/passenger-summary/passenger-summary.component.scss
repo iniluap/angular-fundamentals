@@ -1,3 +1,19 @@
+.summary-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.summary-item {
+    padding-bottom: 35px;
+}
+
+h4 {
+    margin: 20px 0 70px;
+}
+
 .status {
     width: 10px;
     height: 10px;
@@ -10,4 +26,8 @@
     &.checked-in {
         background: #2ecc71;
     }
+}
+
+button {
+    min-width: 60px;
 }

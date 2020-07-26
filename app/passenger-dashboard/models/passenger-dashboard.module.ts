@@ -23,8 +23,7 @@ const routes: Routes = [
         path: 'passengers',
         children: [
             { path: '', component: PassengerDashboardComponent },
-            { path: ':id', component: PassengerEditorComponent },
-            { path: 'edit/:id', component: PassengerEditorComponent }
+            { path: ':id', component: PassengerEditorComponent }
         ]
     },
 ]
