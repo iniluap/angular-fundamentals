@@ -1,0 +1,18 @@
+.nav {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #dce5f2;
+
+    a {
+        padding: 10px 20px;
+        background-color: #3a4250;
+        border-radius: 3px;
+        color: #fff;
+
+        &.active {
+            background-color: #819b42;
+        }
+    }
+}
